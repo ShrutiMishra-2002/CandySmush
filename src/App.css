@@ -1,0 +1,165 @@
+/* General styles */
+body {
+  background-image: url('background.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+  background-attachment: fixed;
+  height: 100vh;
+  /* Enable scrolling */
+  /* overflow-y: auto; */
+}
+
+.app {
+  padding: 20px;
+  /* max-width: 600px; */
+  margin: auto;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content:center ;
+  align-items: center;
+}
+
+.game {
+  width: 560px;
+  height: 560px;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  padding: 20px;
+  border: 2px dashed;
+  background-color: aliceblue;
+  position: relative;
+  overflow: auto; /* Add scrollbar only within game container */
+}
+
+/* Scrollbar Styling */
+.game::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  height: 10px; /* Height for horizontal scrollbar */
+}
+
+.game::-webkit-scrollbar-track {
+  background: #ffe3e8; /* Light pink background to match the theme */
+  border-radius: 10px;
+}
+
+.game::-webkit-scrollbar-thumb {
+  background: #fe76b4; /* Bright pink thumb color to match score-board */
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+.game::-webkit-scrollbar-thumb:hover {
+  background: #ff9ac2; /* Slightly lighter pink on hover */
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fe76b4 #ffe3e8; /* For Firefox: Thumb color and track color */
+}
+
+/* Image container styling */
+.game .img-container {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+}
+
+.game img {
+  width: 100%;
+  pointer-events: none;
+}
+
+.game .img-container.horizontal::before,
+.game .img-container.horizontal::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  height: 5px;
+  width: 80%;
+  background-color: #fff;
+}
+
+.game .img-container.vertical::before,
+.game .img-container.vertical::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  width: 5px;
+  height: 80%;
+  background-color: #fff;
+}
+
+/* Scoreboard styling */
+.score-board {
+  font-size: 25px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fe76b4, #ff9ac2);
+  color: #fff;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.score-board:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
+  }
+
+  .game {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: auto;
+  }
+
+  .game .img-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  .score-board {
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 20px;
+  }
+
+  .game {
+    width: 100%;
+    margin: auto auto;
+    height: auto;
+    padding: 5px;
+  }
+
+  .game .img-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .score-board {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
