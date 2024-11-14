@@ -1,6 +1,6 @@
 /* General styles */
 body {
-  background-image: url('/background.webp');
+  background-image: url('../background.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: fixed;
@@ -121,7 +121,7 @@ body {
 /* Responsive styles */
 @media (min-width: 480px) and (max-width: 768px) {
   body {
-    background-image: url('/cc1.jpg');
+    background-image: url('../cc1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -154,7 +154,7 @@ body {
 
 @media (max-width: 480px) {
   body{
-    background-image: url('/cc2.jpg');
+    background-image: url('../cc2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
